@@ -65,7 +65,10 @@
         conda activate plot_env
         # 3. 安装绘图必需的库
         pip install matplotlib matplotlib-venn
+* 绘图
 
-  
+        cd /data/renweijie/python_plots/2022_HCC1395_4662_rawCallsSV
+        python draw_sv_venn.py
+        python draw_neoantigen_venn.py
       
 
