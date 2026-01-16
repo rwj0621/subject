@@ -1,3 +1,6 @@
+## 基于三代测序数据的遗传变异识别及新生抗原筛选研究
+### 一、从2022年 HCC1395金标准里看二代三代结构变异结果衍生新抗原的关系
+#### 1.筛选SV
 * 三代检测出的（不考虑在二代中有没有检测到）
   
         # 进入文件目录
@@ -38,7 +41,7 @@
         awk -F'\t' 'NR==1 || (($12==1 || $13==1) && $9==0 && $10==0)' cleaned_correct.txt  > illumina_10x_only.txt
         #查看总共有多少个（1110）
         wc -l /data/renweijie/data/HCC1395/HCC1395_truth/illumina_10x_only.txt
-#### 4.从转换后的文件中提取neosv需要的列
+#### 2.从转换后的文件中提取neosv需要的列
 
        # 1. 创建一个名为 "sv_analysis" 的环境，并指定 python 版本
        conda create -n sv_analysis python=3.9 -y
@@ -48,4 +51,4 @@
        conda install pandas -y
        # 4.执行脚本（修改输入输出文件路径）
        python /data/renweijie/data/HCC1395/HCC1395_truth/txt_to_neosv_bedpe.py
-#### 5.运行neosv得到二代三代结构变异衍生新抗原的数量关系
+#### 3.运行neosv得到二代三代结构变异衍生新抗原的数量关系
