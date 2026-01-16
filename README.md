@@ -56,8 +56,16 @@
 * 二代only SV 1110 新抗原 110
 * 二代三代共同 SV 2510 新抗原 85
 #### 4.绘制二代三代结构变异数量及新抗原韦恩图
-* RStudio服务器使用
--浏览器输入 服务器IP:8787 A2服务器：192.168.97.41:8787
--
+* 创建绘图环境并加载库
 
+
+        # 1. 创建环境（指定 Python 3.9）
+        conda create -n plot_env python=3.9 -y
+        # 2. 激活环境
+        conda activate plot_env
+        # 3. 安装绘图必需的库
+        pip install matplotlib matplotlib-venn
+
+  
+      
 
