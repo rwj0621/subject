@@ -55,7 +55,8 @@
 * 三代only SV 2510 新抗原 24
 * 二代only SV 1110 新抗原 110
 * 二代三代共同 SV 2510 新抗原 85
-#### 4.绘制二代三代结构变异数量及新抗原韦恩图
+#### 4.绘图
+##### （1）二代三代结构变异数量及新抗原韦恩图
 * 创建绘图环境并加载库
 
 
@@ -67,8 +68,10 @@
         pip install matplotlib matplotlib-venn
 * 绘图
 
+
         cd /data/renweijie/python_plots/2022_HCC1395_4662_rawCallsSV
         python draw_sv_venn.py
         python draw_neoantigen_venn.py
+
       
 
