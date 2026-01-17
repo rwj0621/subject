@@ -72,6 +72,18 @@
         cd /data/renweijie/python_plots/2022_HCC1395_4662_rawCallsSV
         python draw_sv_venn.py
         python draw_neoantigen_venn.py
+##### （2）不同类型SV衍生新抗原数量图
+* 加载库
+
+
+        pip install pandas seaborn matplotlib
+* 绘图
+
+
+        
+
+
+        
 
       
 
