@@ -103,7 +103,7 @@
         ./prepare_truvari.sh
 * 使用Truvari进行比对
 
-        cd /data/renweijie/data/HCC1395/HCC1395_truvari_output/truth_myresult
+        cd /data/renweijie/data/HCC1395/HCC1395_truvari_output/truth_sniffles2
         truvari bench \
         -b /data/renweijie/data/HCC1395/HCC1395_truvari_output/truvari_vcfs/truth_std_final.vcf.gz \
         -c /data/renweijie/Softwares/SV_tools/sniffles2/truvari_vcfs/HCC1395_somatic_vaf.vcf.gz \
@@ -114,7 +114,7 @@
         -S 0 \
         --sizemax 100000000 \
         --passonly \
-        -o PacBio_truvari_output
+        -o PacBio_Sniffles2_truvari_output
 
         
 
