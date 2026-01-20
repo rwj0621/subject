@@ -78,7 +78,43 @@
 
         pip install pandas seaborn matplotlib
 * 绘图
+### 二、检查SV结果的准确性
+### 1.处理2022年 4662个变异结果
+* 筛选进用PacBio数据检测出来的变异
 
+
+        #将需要的数据提取出来并变成tsv格式
+        python /data/renweijie/data/HCC1395/HCC1395_truth/2022_HCC1395_truth_filter/PacBio_only/extract_pacbio_specific.py
+        #将tsv格式转换成vcf
+        python /data/renweijie/data/HCC1395/HCC1395_truth/2022_HCC1395_truth_filter/PacBio_only/tsv_to_vcf.py
+        # 处理severus输出中的BND类型
+        python /data/renweijie/Softwares/SV_tools/severus/HCC1395_Somatic_SV_output/preprocess_for_truvari/severus_bnd_converter.py
+* SV类型及数量比对
+
+
+        # 绘制金标准 severus结果 自己结果的柱状图
+        cd /data/renweijie/python_plots/Severus_myResults
+        python compare_sv_count.py
+* 使用truvari前对文件进行处理
+
+
+        cd /data/renweijie/data/HCC1395/HCC1395_truvari_output/truvari_vcfs
+        chmod +x prepare_truvari.sh
+        ./prepare_truvari.sh
+* 使用Truvari进行比对
+
+        cd /data/renweijie/data/HCC1395/HCC1395_truvari_output
+        truvari bench \
+        -b /data/renweijie/data/HCC1395/HCC1395_truvari_output/truvari_vcfs/truth_std_final.vcf.gz \
+        -c /data/renweijie/data/HCC1395/HCC1395_truvari_output/truvari_vcfs/paper_result_final.vcf.gz \
+        --typeignore \
+        --dup-to-ins \
+        -p 0 \
+        -s 30 \
+        -S 0 \
+        --sizemax 100000000 \
+        --passonly \
+        -o PacBio_truvari_output
 
         
 
