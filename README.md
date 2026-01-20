@@ -103,10 +103,10 @@
         ./prepare_truvari.sh
 * 使用Truvari进行比对
 
-        cd /data/renweijie/data/HCC1395/HCC1395_truvari_output
+        cd /data/renweijie/data/HCC1395/HCC1395_truvari_output/truth_myresult
         truvari bench \
         -b /data/renweijie/data/HCC1395/HCC1395_truvari_output/truvari_vcfs/truth_std_final.vcf.gz \
-        -c /data/renweijie/data/HCC1395/HCC1395_truvari_output/truvari_vcfs/paper_result_final.vcf.gz \
+        -c /data/renweijie/Softwares/SV_tools/sniffles2/truvari_vcfs/HCC1395_somatic_vaf.vcf.gz \
         --typeignore \
         --dup-to-ins \
         -p 0 \
